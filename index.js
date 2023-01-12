@@ -50,21 +50,52 @@ function renderEmojis() {
     }
 }
 
+function highlightSize(sentSize) {
+    const sizeSmallDiv = document.getElementById("size-small-div")
+    const sizeMediumDiv = document.getElementById("size-medium-div")
+    const sizeLargeDiv = document.getElementById("size-large-div")
+
+    if (sentSize === "small") {
+        sizeSmallDiv.style.backgroundColor = "green"
+        sizeMediumDiv.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
+        sizeLargeDiv.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
+        console.log("sent small")
+    }
+
+    if (sentSize === "medium") {
+        sizeSmallDiv.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
+        sizeMediumDiv.style.backgroundColor = "green"
+        sizeLargeDiv.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
+        console.log("sent medium")
+    }
+
+    if (sentSize === "large") {
+        sizeSmallDiv.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
+        sizeMediumDiv.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
+        sizeLargeDiv.style.backgroundColor = "green"
+        console.log("sent large")
+    }
+}
+
 sizeSmall.addEventListener("click", () => {
     console.log("small")
     size = "small"
+    highlightSize(size)
 })
 
 sizeMedium.addEventListener("click", () => {
     console.log("medium")
     size = "medium"
+    highlightSize(size)
 })
 
 sizeLarge.addEventListener("click", () => {
     console.log("large")
     size = "large"
+    highlightSize(size)
 })
 
+// create an object for each saved emoji
 function emojiAndSize(sentEmoji, sentSize) {
     let sizedEmoji = {
         "emojiName": sentEmoji,
