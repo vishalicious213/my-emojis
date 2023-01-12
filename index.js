@@ -8,10 +8,9 @@ const unshiftBtn = document.getElementById("unshift-btn")
 const popBtn = document.getElementById("pop-btn")
 const shiftBtn = document.getElementById("shift-btn")
 
-const emojiSize = document.getElementById("emoji-size")
-const sizeSmall = document.getElementById("size-small")
-const sizeMedium = document.getElementById("size-medium")
-const sizeLarge = document.getElementById("size-large")
+const sizeSmall = document.getElementById("size-small-div")
+const sizeMedium = document.getElementById("size-medium-div")
+const sizeLarge = document.getElementById("size-large-div")
 let size = "medium"
 
 const myEmojis = [
@@ -50,50 +49,26 @@ function renderEmojis() {
     }
 }
 
+// highlight the selected size button with a green background
 function highlightSize(sentSize) {
-    const sizeSmallDiv = document.getElementById("size-small-div")
-    const sizeMediumDiv = document.getElementById("size-medium-div")
-    const sizeLargeDiv = document.getElementById("size-large-div")
-
     if (sentSize === "small") {
-        sizeSmallDiv.style.backgroundColor = "green"
-        sizeMediumDiv.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
-        sizeLargeDiv.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
-        console.log("sent small")
+        sizeSmall.style.backgroundColor = "green"
+        sizeMedium.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
+        sizeLarge.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
     }
 
     if (sentSize === "medium") {
-        sizeSmallDiv.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
-        sizeMediumDiv.style.backgroundColor = "green"
-        sizeLargeDiv.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
-        console.log("sent medium")
+        sizeSmall.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
+        sizeMedium.style.backgroundColor = "green"
+        sizeLarge.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
     }
 
     if (sentSize === "large") {
-        sizeSmallDiv.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
-        sizeMediumDiv.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
-        sizeLargeDiv.style.backgroundColor = "green"
-        console.log("sent large")
+        sizeSmall.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
+        sizeMedium.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
+        sizeLarge.style.backgroundColor = "green"
     }
 }
-
-sizeSmall.addEventListener("click", () => {
-    console.log("small")
-    size = "small"
-    highlightSize(size)
-})
-
-sizeMedium.addEventListener("click", () => {
-    console.log("medium")
-    size = "medium"
-    highlightSize(size)
-})
-
-sizeLarge.addEventListener("click", () => {
-    console.log("large")
-    size = "large"
-    highlightSize(size)
-})
 
 // create an object for each saved emoji
 function emojiAndSize(sentEmoji, sentSize) {
@@ -104,6 +79,21 @@ function emojiAndSize(sentEmoji, sentSize) {
     return sizedEmoji
 }
 
+sizeSmall.addEventListener("click", () => {
+    size = "small"
+    highlightSize(size)
+})
+
+sizeMedium.addEventListener("click", () => {
+    size = "medium"
+    highlightSize(size)
+})
+
+sizeLarge.addEventListener("click", () => {
+    size = "large"
+    highlightSize(size)
+})
+
 // add emoji to end of list
 pushBtn.addEventListener("click", () => {
     if (emojiInput.value) {
@@ -112,7 +102,6 @@ pushBtn.addEventListener("click", () => {
         emojiInput.value = ""
         renderEmojis()
     }
-    console.log('pushed', myEmojis)
 })
 
 // add emoji to start of list
@@ -123,7 +112,6 @@ unshiftBtn.addEventListener("click", () => {
         emojiInput.value = ""
         renderEmojis()
     }
-    console.log('unshifted', myEmojis)
 })
 
 // remove emoji from end of list
