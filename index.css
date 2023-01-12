@@ -28,8 +28,16 @@ body {
     background-color: #80D87F;
 }
 
+#push-btn:hover,#unshift-btn:hover {
+    background-color: #66a863;
+}
+
 #shift-btn,#pop-btn {
     background-color: #E23349;
+}
+
+#shift-btn:hover,#pop-btn:hover {
+    background-color: #a12334;
 }
 
 h1 {
