@@ -8,6 +8,14 @@ const unshiftBtn = document.getElementById("unshift-btn")
 const popBtn = document.getElementById("pop-btn")
 const shiftBtn = document.getElementById("shift-btn")
 
+for (let i=0; i < emojisArray.length; i++) {
+    let emojiOption = emojisArray[i]
+    let emojiElement = document.createElement("option")
+    emojiElement.textContent = emojiOption
+    emojiElement.value = emojiOption
+    emojiInput.appendChild(emojiElement)
+}
+
 function renderEmojis() {
     emojiContainer.innerHTML = ""
     for (let i = 0; i < myEmojis.length; i++) {
