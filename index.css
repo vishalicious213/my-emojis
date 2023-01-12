@@ -99,3 +99,25 @@ button {
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.2);
 }
+
+#emoji-size {
+    display: flex;
+    justify-content: center;
+}
+
+.size {
+    outline: 1px solid red;
+    display: flex;
+    width: 10rem;
+    margin-right: .5rem;
+}
+
+.size-option {
+    outline: 1px solid yellow;
+    width: 1rem;
+    margin: 0 .5rem;
+}
+
+label {
+    outline: 1px solid white;
+}
