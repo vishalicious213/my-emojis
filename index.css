@@ -49,6 +49,11 @@ h1 {
     letter-spacing: .25rem;
     text-align: center;
     color: white;
+    background-color: rgba(93, 164, 217, .5);
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 4rem;
+    padding: 1rem;
 }
 
 input {
