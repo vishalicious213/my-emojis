@@ -1,14 +1,8 @@
 const emojisArray = ["✌","😂","😝","😁","😱","👉","🙌","🍻","🔥","🌈","☀","🎈","🌹","💄","🎀","⚽","🎾","🏁","😡","👿","🐻","🐶","🐬","🐟","🍀","👀","🚗","🍎","💝","💙","👌","❤","😍","😉","😓","😳","💪","💩","🍸","🔑","💖","🌟","🎉","🌺","🎶","👠","🏈","⚾","🏆","👽","💀","🐵","🐮","🐩","🐎","💣","👃","👂","🍓","💘","💜","👊","💋","😘","😜","😵","🙏","👋","🚽","💃","💎","🚀","🌙","🎁","⛄","🌊","⛵","🏀","🎱","💰","👶","👸","🐰","🐷","🐍","🐫","🔫","👄","🚲","🍉","💛","💚","👨‍💻", "⛷", "🍲"]
 
-const myEmojis = ["👨‍💻", "⛷", "🍲"]
-// const myEmojis = [
-//     {emojiName: "👨‍💻", emojiSize: size}, 
-//     {emojiName: "⛷", emojiSize: size}, 
-//     {emojiName: "🍲", emojiSize: size}
-// ]
-
 const emojiContainer = document.getElementById("emoji-container")
 const emojiInput = document.getElementById("emoji-input")
+
 const pushBtn = document.getElementById("push-btn")
 const unshiftBtn = document.getElementById("unshift-btn")
 const popBtn = document.getElementById("pop-btn")
@@ -19,6 +13,12 @@ const sizeSmall = document.getElementById("size-small")
 const sizeMedium = document.getElementById("size-medium")
 const sizeLarge = document.getElementById("size-large")
 let size = "medium"
+
+const myEmojis = [
+    {emojiName: "👨‍💻", emojiSize: size}, 
+    {emojiName: "⛷", emojiSize: size}, 
+    {emojiName: "🍲", emojiSize: size}
+]
 
 // populate drop-down list with emojis from emojisArray
 for (let i = 0; i < emojisArray.length; i++) {
@@ -37,13 +37,13 @@ function renderEmojis() {
         // emoji.textContent = myEmojis[i]
         emoji.textContent = myEmojis[i].emojiName
         if (myEmojis[i].emojiSize === "small") {
-            emoji.style.fontSize = "1rem"
-        }
-        if (myEmojis[i].emojiSize === "medium") {
             emoji.style.fontSize = "2rem"
         }
+        if (myEmojis[i].emojiSize === "medium") {
+            emoji.style.fontSize = "4rem"
+        }
         if (myEmojis[i].emojiSize === "large") {
-            emoji.style.fontSize = "3rem"
+            emoji.style.fontSize = "5rem"
         }
 
         // emoji.style.fontSize = "1rem"
