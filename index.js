@@ -1,6 +1,12 @@
 const emojisArray = ["✌","😂","😝","😁","😱","👉","🙌","🍻","🔥","🌈","☀","🎈","🌹","💄","🎀","⚽","🎾","🏁","😡","👿","🐻","🐶","🐬","🐟","🍀","👀","🚗","🍎","💝","💙","👌","❤","😍","😉","😓","😳","💪","💩","🍸","🔑","💖","🌟","🎉","🌺","🎶","👠","🏈","⚾","🏆","👽","💀","🐵","🐮","🐩","🐎","💣","👃","👂","🍓","💘","💜","👊","💋","😘","😜","😵","🙏","👋","🚽","💃","💎","🚀","🌙","🎁","⛄","🌊","⛵","🏀","🎱","💰","👶","👸","🐰","🐷","🐍","🐫","🔫","👄","🚲","🍉","💛","💚","👨‍💻", "⛷", "🍲"]
 
 const myEmojis = ["👨‍💻", "⛷", "🍲"]
+// const myEmojis = [
+//     {emojiName: "👨‍💻", emojiSize: size}, 
+//     {emojiName: "⛷", emojiSize: size}, 
+//     {emojiName: "🍲", emojiSize: size}
+// ]
+
 const emojiContainer = document.getElementById("emoji-container")
 const emojiInput = document.getElementById("emoji-input")
 const pushBtn = document.getElementById("push-btn")
@@ -28,14 +34,15 @@ function renderEmojis() {
     emojiContainer.innerHTML = ""
     for (let i = 0; i < myEmojis.length; i++) {
         const emoji = document.createElement("span")
-        emoji.textContent = myEmojis[i]
-        if (size === "small") {
+        // emoji.textContent = myEmojis[i]
+        emoji.textContent = myEmojis[i].emojiName
+        if (myEmojis[i].emojiSize === "small") {
             emoji.style.fontSize = "1rem"
         }
-        if (size === "medium") {
+        if (myEmojis[i].emojiSize === "medium") {
             emoji.style.fontSize = "2rem"
         }
-        if (size === "large") {
+        if (myEmojis[i].emojiSize === "large") {
             emoji.style.fontSize = "3rem"
         }
 
@@ -59,31 +66,45 @@ sizeLarge.addEventListener("click", () => {
     size = "large"
 })
 
-// add emoji to start of list
-pushBtn.addEventListener("click", () => {
-    if (emojiInput.value) {
-        myEmojis.push(emojiInput.value)
-        emojiInput.value = ""
-        renderEmojis()
+function emojiAndSize(sentEmoji, sentSize) {
+    let sizedEmoji = {
+        "emojiName": sentEmoji,
+        "emojiSize": sentSize
     }
-})
+    return sizedEmoji
+}
 
 // add emoji to end of list
-unshiftBtn.addEventListener("click", () => {
+pushBtn.addEventListener("click", () => {
     if (emojiInput.value) {
-        myEmojis.unshift(emojiInput.value)
+        // myEmojis.push(emojiInput.value)
+        let pushThis = emojiAndSize(emojiInput.value, size)
+        myEmojis.push(pushThis)
         emojiInput.value = ""
         renderEmojis()
     }
+    console.log('pushed', myEmojis)
 })
 
-// remove emoju from start of list
+// add emoji to start of list
+unshiftBtn.addEventListener("click", () => {
+    if (emojiInput.value) {
+        // myEmojis.unshift(emojiInput.value)
+        let pushThis = emojiAndSize(emojiInput.value, size)
+        myEmojis.unshift(pushThis)
+        emojiInput.value = ""
+        renderEmojis()
+    }
+    console.log('unshifted', myEmojis)
+})
+
+// remove emoji from end of list
 popBtn.addEventListener("click", () => {
     myEmojis.pop()
     renderEmojis()
 })
 
-// remove emoji from end of list
+// remove emoji from start of list
 shiftBtn.addEventListener("click", () => {
     myEmojis.shift()
     renderEmojis()
