@@ -17,6 +17,8 @@ pushBtn.addEventListener("click", () => {
         myEmojis.push(emojiInput.value)
         emojiContainer.append(emojiInput.value)
         emojiInput.value = ""
+        emojiContainer.innerHTML = ""
+        renderEmojis()
     }
 })
 
