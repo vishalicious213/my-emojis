@@ -8,7 +8,8 @@ const unshiftBtn = document.getElementById("unshift-btn")
 const popBtn = document.getElementById("pop-btn")
 const shiftBtn = document.getElementById("shift-btn")
 
-for (let i=0; i < emojisArray.length; i++) {
+// populate drop-down list with emojis from emojisArray
+for (let i = 0; i < emojisArray.length; i++) {
     let emojiOption = emojisArray[i]
     let emojiElement = document.createElement("option")
     emojiElement.textContent = emojiOption

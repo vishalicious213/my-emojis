@@ -13,8 +13,10 @@ JavaScript concepts
     - .unshift()
 - for loops
 - document.getElementById()
-- element.innerHTML
-- element.textContent
-- element.append()
-- element.addEventListener()
-- element.value
+    - element.innerHTML
+    - element.textContent
+    - element.addEventListener()
+    - element.value
+- document.createElement()
+    - element.append()
+    - element.appendChild()
