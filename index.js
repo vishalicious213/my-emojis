@@ -34,8 +34,8 @@ function renderEmojis() {
     emojiContainer.innerHTML = ""
     for (let i = 0; i < myEmojis.length; i++) {
         const emoji = document.createElement("span")
-        // emoji.textContent = myEmojis[i]
         emoji.textContent = myEmojis[i].emojiName
+
         if (myEmojis[i].emojiSize === "small") {
             emoji.style.fontSize = "2rem"
         }
@@ -46,7 +46,6 @@ function renderEmojis() {
             emoji.style.fontSize = "5rem"
         }
 
-        // emoji.style.fontSize = "1rem"
         emojiContainer.append(emoji)
     }
 }
@@ -77,7 +76,6 @@ function emojiAndSize(sentEmoji, sentSize) {
 // add emoji to end of list
 pushBtn.addEventListener("click", () => {
     if (emojiInput.value) {
-        // myEmojis.push(emojiInput.value)
         let pushThis = emojiAndSize(emojiInput.value, size)
         myEmojis.push(pushThis)
         emojiInput.value = ""
@@ -89,7 +87,6 @@ pushBtn.addEventListener("click", () => {
 // add emoji to start of list
 unshiftBtn.addEventListener("click", () => {
     if (emojiInput.value) {
-        // myEmojis.unshift(emojiInput.value)
         let pushThis = emojiAndSize(emojiInput.value, size)
         myEmojis.unshift(pushThis)
         emojiInput.value = ""
