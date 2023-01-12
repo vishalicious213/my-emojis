@@ -17,6 +17,7 @@ for (let i = 0; i < emojisArray.length; i++) {
     emojiInput.appendChild(emojiElement)
 }
 
+// show emojis onscreen
 function renderEmojis() {
     emojiContainer.innerHTML = ""
     for (let i = 0; i < myEmojis.length; i++) {
@@ -26,6 +27,7 @@ function renderEmojis() {
     }
 }
 
+// add emoji to start of list
 pushBtn.addEventListener("click", () => {
     if (emojiInput.value) {
         myEmojis.push(emojiInput.value)
@@ -34,6 +36,7 @@ pushBtn.addEventListener("click", () => {
     }
 })
 
+// add emoji to end of list
 unshiftBtn.addEventListener("click", () => {
     if (emojiInput.value) {
         myEmojis.unshift(emojiInput.value)
@@ -42,11 +45,13 @@ unshiftBtn.addEventListener("click", () => {
     }
 })
 
+// remove emoju from start of list
 popBtn.addEventListener("click", () => {
     myEmojis.pop()
     renderEmojis()
 })
 
+// remove emoji from end of list
 shiftBtn.addEventListener("click", () => {
     myEmojis.shift()
     renderEmojis()
