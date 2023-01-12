@@ -20,8 +20,12 @@ body {
 }
 
 #emoji-container {
-    margin: 1rem;
+    margin: 1rem auto;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4rem;
+    padding: 1rem;
+    width: 90%;
 }
 
 #emoji-container span {
@@ -49,7 +53,7 @@ h1 {
     letter-spacing: .25rem;
     text-align: center;
     color: white;
-    background-color: rgba(93, 164, 217, .5);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 90%;
     margin: 0 auto;
     border-radius: 4rem;
@@ -87,9 +91,10 @@ button {
 }
 
 #interface {
-    border: 5px solid white;
+    border: 3px solid gainsboro;
     border-radius: 1rem;
     padding: 1rem;
     width: 90%;
     margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
