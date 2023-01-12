@@ -8,6 +8,12 @@ const unshiftBtn = document.getElementById("unshift-btn")
 const popBtn = document.getElementById("pop-btn")
 const shiftBtn = document.getElementById("shift-btn")
 
+const emojiSize = document.getElementById("emoji-size")
+const sizeSmall = document.getElementById("size-small")
+const sizeMedium = document.getElementById("size-medium")
+const sizeLarge = document.getElementById("size-large")
+let size = "medium"
+
 // populate drop-down list with emojis from emojisArray
 for (let i = 0; i < emojisArray.length; i++) {
     let emojiOption = emojisArray[i]
@@ -23,10 +29,35 @@ function renderEmojis() {
     for (let i = 0; i < myEmojis.length; i++) {
         const emoji = document.createElement("span")
         emoji.textContent = myEmojis[i]
+        if (size === "small") {
+            emoji.style.fontSize = "1rem"
+        }
+        if (size === "medium") {
+            emoji.style.fontSize = "2rem"
+        }
+        if (size === "large") {
+            emoji.style.fontSize = "3rem"
+        }
+
         // emoji.style.fontSize = "1rem"
         emojiContainer.append(emoji)
     }
 }
+
+sizeSmall.addEventListener("click", () => {
+    console.log("small")
+    size = "small"
+})
+
+sizeMedium.addEventListener("click", () => {
+    console.log("medium")
+    size = "medium"
+})
+
+sizeLarge.addEventListener("click", () => {
+    console.log("large")
+    size = "large"
+})
 
 // add emoji to start of list
 pushBtn.addEventListener("click", () => {
