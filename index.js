@@ -127,3 +127,4 @@ shiftBtn.addEventListener("click", () => {
 })
 
 renderEmojis()
+highlightSize("medium")
