@@ -102,22 +102,35 @@ button {
 
 #emoji-size {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    max-width: 20rem;
+    margin: 1rem auto;
 }
 
 .size {
-    outline: 1px solid red;
+    background-color: rgba(0, 0, 0, 0.2);
     display: flex;
-    width: 10rem;
-    margin-right: .5rem;
+    justify-content: center;
+    width: 5.5rem;
+    padding: .25rem;
+    border-radius: .25rem;
+}
+
+.size:hover {
+    outline: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.size:hover label {
+    color: white;
 }
 
 .size-option {
-    outline: 1px solid yellow;
     width: 1rem;
     margin: 0 .5rem;
+    display: none;
 }
 
 label {
-    outline: 1px solid white;
+    color: gainsboro;
 }
