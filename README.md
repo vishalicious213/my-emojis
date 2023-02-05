@@ -4,9 +4,13 @@ This was a Scrimba project that I added on to with customizations. The original 
 
 The input field accepted any string character, so visitors were left to their own devices to find an emoji and paste it into the input to render it.
 
+My customizations allowed visitors to pick emojis from a drop-down list to add to the start or end of an array and have them render onscreen. The emoji's size can be selected (small, medium, large) and the selected size is highlighted and remains active for more emojis until a new size is chosen.
+
 Original design from Scrimba: [here](https://github.com/vishalicious213/my-emojis/blob/main/scrimba-version.jpg)
 
-My customizations allowed visitors to pick emojis from a drop-down list to add to the start or end of an array and have them render onscreen. The emoji's size can be selected (small, medium, large) and the selected size is highlighted and remains active for more emojis until a new size is chosen.
+My design:
+
+![](https://vish213-portfolio-v3.netlify.app/static/media/my-emojis.dc5dfe8b.jpg)
 
 Deployed at: https://vish213-express-yourself.netlify.app/
 
