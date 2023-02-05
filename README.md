@@ -6,7 +6,9 @@ The input field accepted any string character, so visitors were left to their ow
 
 My customizations allowed visitors to pick emojis from a drop-down list to add to the start or end of an array and have them render onscreen. The emoji's size can be selected (small, medium, large) and the selected size is highlighted and remains active for more emojis until a new size is chosen.
 
-Original design from Scrimba: [here](https://github.com/vishalicious213/my-emojis/blob/main/scrimba-version.jpg)
+Original design from Scrimba:
+
+![](https://github.com/vishalicious213/my-emojis/blob/main/scrimba-version.jpg)
 
 My design:
 
